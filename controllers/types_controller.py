@@ -10,3 +10,8 @@ def types():
     types = type_repository.select_all_types()
     return render_template('types/index.html', types = types)
 
+@types_blueprint.route("/types/new")
+def new_type():
+    animals = animal_repository.select_all_animals()
+    return render_template('types/new.html', animals = animals)
+

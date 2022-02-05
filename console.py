@@ -9,13 +9,24 @@ import repositories.animal_repository as animal_repository
 type_repository.delete_all_types()
 animal_repository.delete_all_animals()
 
+
+
 animal1 = Animal('Dog')
 animal_repository.save(animal1)
 
-animal_repository.select_all_animals()
 
-type = Type("Alaskan Malamute", animal1, True)
-type_repository.save(type)
+
+type1 = Type("Alaskan Malamute", animal1, True)
+type_repository.save(type1)
+
+result = type_repository.select_all_types()
+
+for type in result:
+    print(type.__dict__)
+
+
+
+
 
 pdb.set_trace()
 

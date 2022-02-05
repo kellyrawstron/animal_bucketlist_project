@@ -20,7 +20,7 @@ def select_all_types():
     results = run_sql(sql)
 
     for row in results:
-        animal = animal_repository.select_all_animals(row['animal_id'])
+        animal = animal_repository.select_animal(row['animal_id'])
         type = Type(row['animal_type'], animal, row['type_seen'], row['id'] )
         types.append(type)
     return types
