@@ -20,3 +20,13 @@ def select_all_animals():
         animal = Animal(row['animal_name'], row['id'] )
         animals.append(animal)
     return animals
+
+def select_animal(id):
+    animal = None
+    sql = "SELECT * FROM animals WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        animal = Animal(result['animal_name'], result['id'] )
+    return animal 
