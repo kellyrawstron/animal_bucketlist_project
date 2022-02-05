@@ -9,3 +9,4 @@ types_blueprint = Blueprint("types", __name__)
 def types():
     types = type_repository.select_all_types()
     return render_template('types/index.html', types = types)
+

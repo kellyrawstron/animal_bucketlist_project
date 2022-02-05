@@ -5,3 +5,6 @@ class Type:
         self.animal = animal
         self.type_seen = type_seen
         self.id = id
+        
+    def type_has_been_seen(self):
+        self.type_seen =True
