@@ -12,3 +12,4 @@ CREATE TABLE types (
     type_seen BOOLEAN,
     animal_id INT REFERENCES animals(id)
 );
+
