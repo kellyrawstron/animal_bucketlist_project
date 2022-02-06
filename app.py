@@ -1,12 +1,12 @@
 from flask import Flask, render_template
 
-from controllers.types_controller import types_blueprint
+from controllers.breeds_controller import breeds_blueprint
 
 
 
 app = Flask(__name__)
 
-app.register_blueprint(types_blueprint)
+app.register_blueprint(breeds_blueprint)
 
 
 

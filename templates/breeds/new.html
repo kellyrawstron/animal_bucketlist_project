@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<form action="/breeds" method="post">
+    <div>
+        <label for="animal">Animal</label>
+        <select id="animal" name="animal_id">
+
+            {% for animal in animals %} 
+            <option value={{animal.id}}>{{animal.animal_name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+</form>
+
+
+
+{% endblock %}

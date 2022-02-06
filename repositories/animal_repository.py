@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 
 from models.animal import Animal
-from models.type import Type
+from models.breed import Breed
 
 def save(animal):
     sql = "INSERT INTO animals (animal_name) VALUES (%s) RETURNING *"
@@ -11,7 +11,7 @@ def save(animal):
     animal.id = id
     return animal 
 
-def select_all_animals():
+def select_all():
     animals = []
     
     sql = "SELECT * FROM animals"
@@ -22,7 +22,7 @@ def select_all_animals():
         animals.append(animal)
     return animals
 
-def select_animal(id):
+def select(id):
     animal = None
     sql = "SELECT * FROM animals WHERE id = %s"
     values = [id]
@@ -30,35 +30,36 @@ def select_animal(id):
 
     if result is not None:
         animal = Animal(result['animal_name'], result['id'] )
-        
     return animal 
 
-def update_animal(animal):
-    sql = "UPDATE animals SET (animal_name) = (%s) WHERE id = %s"
-    values = [animal.animal_name]
-    run_sql(sql, values)
 
 
 
 
-def delete_all_animals():
+def delete_all():
     sql = "DELETE  FROM animals"
     run_sql(sql)
     
-def delete_animal_id(id):
+def delete(id):
     sql = "DELETE  FROM animals WHERE id = %s"
     values = [id]
     run_sql(sql, values)
     
     
-def types(animal):
-    types = []
+def update(animal):
+    sql = "UPDATE animals SET (animal_name) = (%s) WHERE id = %s"
+    values = [animal.animal_name]
+    run_sql(sql, values)
     
-    sql = "SELECT * FROM types WHERE animal_id = %s"
+    
+def breeds(animal):
+    breeds = []
+    
+    sql = "SELECT * FROM breeds WHERE animal_id = %s"
     values = [animal.id]
     results = run_sql(sql, values)
     
     for row in results:
-        type = Type(row['animal_name'], animal, row['type_seen'], row['id'])
-        types.append(type)
-    return types 
+        breed = Breed(row['animal_name'], animal, row['breed_seen'], row['id'])
+        breeds.append(breed)
+    return breeds 
