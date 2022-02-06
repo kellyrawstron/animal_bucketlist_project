@@ -48,7 +48,7 @@ def delete(id):
     
 def update(animal):
     sql = "UPDATE animals SET (animal_name) = (%s) WHERE id = %s"
-    values = [animal.animal_name]
+    values = [animal.animal_name, animal.id]
     run_sql(sql, values)
     
     
@@ -60,6 +60,6 @@ def breeds(animal):
     results = run_sql(sql, values)
     
     for row in results:
-        breed = Breed(row['animal_name'], animal, row['breed_seen'], row['id'])
+        breed = Breed(row['breed_kind'], row['animal_id'], row['breed_seen'], row['id'])
         breeds.append(breed)
     return breeds 

@@ -1,7 +1,8 @@
-from flask import Flask, render_template, Blueprint, request
+from flask import Flask, render_template, Blueprint, request, redirect
 import repositories.breed_repository as breed_repository
 import repositories.animal_repository as animal_repository
 from models.breed import Breed
+
 
 breeds_blueprint = Blueprint("breeds", __name__)
 
@@ -14,6 +15,3 @@ def breeds():
 def new_breed():
     animals = animal_repository.select_all()
     return render_template('breeds/new.html', animals = animals)
-
-
-

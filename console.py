@@ -4,9 +4,10 @@ from models.breed import Breed
 from models.animal import Animal
 
 
+import repositories.breed_repository as breed_repository
 import repositories.animal_repository as animal_repository
 
-
+breed_repository.delete_all()
 animal_repository.delete_all()
 
 
@@ -21,6 +22,9 @@ animal3 = Animal('Bird')
 animal_repository.save(animal3)
 
 animal_repository.select_all()
+
+
+
 
 
 
