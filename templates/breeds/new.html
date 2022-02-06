@@ -1,7 +1,13 @@
 {% extends "base.html" %} 
 {% block content %} 
 
+<div class="page-title">
+    <center>ADD ANIMALS</center> 
+    </div>
+
 <form action="/breeds" method="POST">
+    <div class="container">
+    <div class="box">
     <div>
         <label for="animal">Animal</label>
         <select id="animal" name="animal_id">
@@ -27,7 +33,8 @@
 
     <button type="submit">Add </button>
 
-
+</div>
+</div>
 </form>
 
 
