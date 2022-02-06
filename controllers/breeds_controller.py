@@ -31,3 +31,25 @@ def create_breed():
 def delete_breed(id):
     breed_repository.delete(id)
     return redirect('/breeds')
+
+@breeds_blueprint.route("/breeds/<id>")
+def show_breed(id):
+    breed = breed_repository.select(id)
+    return render_template('breeds/show.html', breed = breed)
+
+@breeds_blueprint.route("/breeds/<id>/edit")
+def edit_breed(id):
+    breed = breed_repository.select(id)
+    animals = animal_repository.select_all()
+    return render_template('breeds/edit.html', breed = breed, animals = animals)
+
+@breeds_blueprint.route("/breeds/<id>", methods=['POST'])
+def update_breed(id):
+    breed_kind = request.form['breed_kind']
+    animal_id = request.form['animal_id']
+    breed_seen = request.form['breed_seen']
+    animal = animal_repository.select(animal_id)
+    breed = Breed(breed_kind, animal, breed_seen, id)
+    breed_repository.update(breed)
+    return redirect('/breeds')
+    

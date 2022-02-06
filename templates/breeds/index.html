@@ -6,7 +6,7 @@
 
 {% for breed in breeds %}
 {{breed.animal.animal_name}}
-{{breed.breed_kind}}
+<a href="/breeds/{{breed.id}}">{{breed.breed_kind}}</a>
 {{breed.breed_seen}}
 
 <form action="/breeds/{{breed.id}}/delete" method="POST">

@@ -52,7 +52,7 @@ def delete(id):
     
 def update(breed):
     sql = "UPDATE breeds SET (breed_kind, animal_id, breed_seen) = (%s, %s, %s) WHERE id = %s"
-    values = [breed.breed_kind, breed.animal_id, breed.breed_seen, breed.id]
+    values = [breed.breed_kind, breed.animal.id, breed.breed_seen, breed.id]
     run_sql(sql, values)
     
     
