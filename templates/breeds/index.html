@@ -9,5 +9,9 @@
 {{breed.breed_kind}}
 {{breed.breed_seen}}
 
+<form action="/breeds/{{breed.id}}/delete" method="POST">
+    <button type="submit" name="send" value="delete"> delete </button>
+</form>
+
 {% endfor %}
 {% endblock %}

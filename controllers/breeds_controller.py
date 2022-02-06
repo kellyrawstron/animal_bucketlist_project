@@ -26,3 +26,8 @@ def create_breed():
     breed = Breed(breed_kind, animal, breed_seen)
     breed_repository.save(breed)
     return redirect('/breeds')
+
+@breeds_blueprint.route("/breeds/<id>/delete", methods=['POST'])
+def delete_breed(id):
+    breed_repository.delete(id)
+    return redirect('/breeds')
