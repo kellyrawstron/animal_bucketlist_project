@@ -15,7 +15,7 @@ app.register_blueprint(animal_types_blueprint)
 
 @app.route('/')
 def home():
-    return render_template('index.html', header = "HOME PAGE")
+    return render_template('index.html', header = "ANIMAL BUCKET LIST")
 
 if __name__ == '__main__':
     app.run(debug=True)
