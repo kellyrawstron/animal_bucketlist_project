@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/animal_types/{{animal.id}}" method="post">
+  <div>
+    <label for="breed">Breed</label>
+    <input type="text" id="breed" name="breed" value="{{animal.breed}}" required autofocus>
+  </div>
+
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{animal.name}}" required autofocus>
+  </div>
+
+  
+  <div>
+    <label for="seen">Have you seen this breed?</label>
+    <select id="seen" name="seen">
+
+      <option value="true"
+        {% if animal.seen == True %} selected="selected" {% endif %}>
+        Yes
+      </option>
+
+      <option value="false"
+        {% if animal.seen == False %} selected="selected" {% endif %}>
+        No
+      </option>
+
+    </select>
+  </div>
+
+  <div>
+    <label for="animal-type">Animal type</label>
+    <select id="animal-type" name="animal_type_id">
+      {% for animal_type in animal_types %}
+        <option value="{{ animal_type.id }}"
+          {% if animal.animal_type.id== animal_type.id %} selected="selected"{% endif %}>
+          {{ animal_type.name }}
+        </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Change Animal</button>
+
+</form>
+
+{% endblock %}

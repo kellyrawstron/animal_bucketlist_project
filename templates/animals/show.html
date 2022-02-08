@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    <p>{{animal.name}}</p>
+    <br>
+    <p>{{animal.breed}}</p>
+    
+    <p>Breed seen? {{animal.seen}}</p>
+    
+
+      <a href="/animals/{{animal.id}}/edit"> <button type="submit" name="send" value="edit"> edit </button></a>
+  
+<br>
+animalllllll
+
+
+
+  
+
+{% endblock %}

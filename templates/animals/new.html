@@ -1,0 +1,50 @@
+{% extends "base.html" %} 
+{% block content %} 
+
+<div class="page-title">
+    <center>ADD ANIMALS I HAVE SEEN</center> 
+    </div>
+
+<form action="/animals" method="POST">
+    <div class="container">
+    <div class="box">
+    <div>
+        <label for="animal-type">Animal Type</label>
+        <select id="animal-type" name="animal_type_id">
+
+            {% for animal_type in animal_types %} 
+            <option value={{animal_type.id}}>{{animal_type.name}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="breed">Breed</label>
+        <input type="text" id="breed" name="breed" placeholder="Name of breed" required autofocus>
+    </div>
+
+
+    <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Name of animal" required autofocus>
+    </div>
+
+    <div>
+        <label for="seen">Have you seen this breed?</label>
+        <select name="seen" id="seen">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+        <!-- <label for="seen">have you seen this breed</label>
+        <input type="checkbox" name="seen" value="false"> -->
+    </select>
+    </div>
+
+    <button type="submit">Add </button>
+
+</div>
+</div>
+</form>
+
+
+
+{% endblock %}

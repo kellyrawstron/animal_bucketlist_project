@@ -1,16 +1,19 @@
-DROP TABLE IF EXISTS breeds;
 DROP TABLE IF EXISTS animals;
+DROP TABLE IF EXISTS animal_types;
 
+
+CREATE TABLE animal_types (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255)
+);
 
 CREATE TABLE animals (
   id SERIAL PRIMARY KEY,
-  animal_name VARCHAR(255)
+  name VARCHAR(255),
+  breed VARCHAR(255),
+  seen BOOLEAN,
+  animal_type_id INT REFERENCES animal_types(id) ON DELETE CASCADE
 );
 
-CREATE TABLE breeds (
-  id SERIAL PRIMARY KEY,
-  breed_kind VARCHAR(255),
-  breed_seen BOOLEAN,
-  animal_id INT REFERENCES animals(id) 
-);
+
 

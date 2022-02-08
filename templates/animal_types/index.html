@@ -1,0 +1,51 @@
+
+
+
+
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+<div class="page-title">
+    <center>ANIMALS I WANT TO SEE</center> 
+    </div>
+
+{% for animal in animals %}
+    {% if animal.seen == False %} 
+        <div class="container">
+        <div class="box">
+        {{animal.animal_type.name}}
+        <br>
+        {{animal.name}}
+        <br>
+        <a href="/animal_types/{{animal.id}}">{{animal.breed}}</a> 
+    {% endif %}
+
+
+
+            
+    <!-- {% if animal.seen == False %} 
+        <p> SEEN IT YAYYYY</p>
+        {% else %}
+        <p> NOT SEEN IT</p>
+        {% endif %} -->
+
+
+        <form action="/animal_types/{{animal.id}}/delete" method="POST">
+            <button type="submit" name="send" value="delete"> delete </button>
+        </form>
+
+        
+        <a href="/animal_types/{{animal.id}}/edit"> <button type="submit" name="send" value="edit"> edit </button></a>
+    
+    
+    
+        </div>
+    </div> 
+
+
+{% endfor %}
+{% endblock %}
+
+
+
