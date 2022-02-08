@@ -15,7 +15,7 @@ app.register_blueprint(animal_types_blueprint)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', header = "HOME PAGE")
 
 if __name__ == '__main__':
     app.run(debug=True)

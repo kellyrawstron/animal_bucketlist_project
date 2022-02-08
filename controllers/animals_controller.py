@@ -16,7 +16,7 @@ def animals():
 @animals_blueprint.route("/animals/new")
 def new_animal():
     animal_types = animal_type_repository.select_all()
-    return render_template('animals/new.html', animal_types = animal_types)
+    return render_template('animals/new.html', animal_types = animal_types, header = "Add Animals")
 
 @animals_blueprint.route("/animals", methods=['POST'])
 def create_animal():
@@ -37,7 +37,7 @@ def delete_animal(id):
 @animals_blueprint.route("/animals/<id>")
 def show_animal(id):
     animal = animal_repository.select(id)
-    return render_template('animals/show.html', animal = animal)
+    return render_template('animals/show.html', animal = animal, header = "Add Animal")
 
 @animals_blueprint.route("/animals/<id>/edit")
 def edit_animal(id):

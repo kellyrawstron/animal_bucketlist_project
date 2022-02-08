@@ -6,9 +6,7 @@
 
 {% block content %} 
 
-<div class="page-title">
-    <center>ANIMALS I WANT TO SEE</center> 
-    </div>
+<h1 class="header">{{ header }}</h1>
 
 {% for animal in animals %}
     {% if animal.seen == False %} 
