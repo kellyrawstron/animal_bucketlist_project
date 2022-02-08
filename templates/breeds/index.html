@@ -10,13 +10,32 @@
 <div class="container">
     <div class="box">
 {{breed.animal.animal_name}}
-<a href="/breeds/{{breed.id}}">{{breed.breed_kind}}</a>
-{{breed.breed_seen}}
+<br>
+<a href="/breeds/{{breed.id}}">{{breed.breed_kind}}</a> 
+<!-- {{breed.breed_seen}} -->
 
-<form action="/breeds/{{breed.id}}/delete" method="POST">
-    <button type="submit" name="send" value="delete"> delete </button>
-</form>
+
+        
+{% if breed.breed_seen == True %} 
+     <p> SEEN IT YAYYYY</p>
+     {% else %}
+     <p> NOT SEEN IT</p>
+    {% endif %}
+
+
+    <form action="/breeds/{{breed.id}}/delete" method="POST">
+        <button type="submit" name="send" value="delete"> delete </button>
+    </form>
+
+    
+    <a href="/breeds/{{breed.id}}/edit"> <button type="submit" name="send" value="edit"> edit </button></a>
+    <!-- <button type="submit" name="send" value="edit"> edit </button> -->
+     
+   
+  
     </div>
-</div>
+</div> 
+
+
 {% endfor %}
 {% endblock %}

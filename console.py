@@ -21,6 +21,12 @@ animal_repository.save(animal2)
 animal3 = Animal('Bird')
 animal_repository.save(animal3)
 
+animal4 = Animal('Fish')
+animal_repository.save(animal4)
+
+animal5 = Animal('Rabbit')
+animal_repository.save(animal5)
+
 animal_repository.select_all()
 
 
