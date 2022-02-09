@@ -5,20 +5,23 @@
 <div class="page-title">
     <h1 class="header">{{ header }}</h1>
     </div>
-
+   
 {% for animal in animals %}
      
         <div class="container">
         <div class="box">
-
+            <div class="text-box">
+                <div class="animal-type-text">
         {{animal.animal_type.name}}
+            </div>
         <br>
         {{animal.name}}
         <br>
+        <div class="animal-breed-text">
         <a href="/animals/{{animal.id}}">{{animal.breed}}</a> 
-   
+            </div>
 
-
+        <div class="spaceBetweenBoxes"></div>
 
             
     <!-- {% if animal.seen == True %} 
@@ -28,20 +31,20 @@
     <p> NOT SEEN IT</p>
     {% endif %} -->
 
-
+        <div class="edit-delete-btn">
         <form action="/animals/{{animal.id}}/delete" method="POST">
             <button type="submit" name="send" value="delete"> delete </button>
         </form>
 
-        
+        <div class="spaceBetweenBoxes"></div>
         <a href="/animals/{{animal.id}}/edit"> <button type="submit" name="send" value="edit"> edit </button></a>
-        <!-- <button type="submit" name="send" value="edit"> edit </button> -->
         
+        </div>
     
     
         </div>
     </div> 
-
-
+    </div>
+    <div class="spaceBetweenBoxes"></div>
 {% endfor %}
 {% endblock %}
