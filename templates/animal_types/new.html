@@ -1,47 +1,56 @@
 {% extends "base.html" %} 
 {% block content %} 
-
+<div class="page-title">
 <h1 class="header">{{ header }}</h1>
+</div>
+
+
+<div class="spaceBetweenBoxes"></div>
+   
 <form action="/animal_types" method="POST">
     <div class="container">
     <div class="box">
-    <div>
-        <label for="animal-type">Animal Type</label>
-        <select id="animal-type" name="animal_type_id">
+        <div class="text-box">
+        <label for="animal-type">SPECIES</label>
+    <input type="text" id="animal-type" name="name"></div>
+<br>
+<div class="spaceBetweenBoxes"></div>
 
-            {% for animal_type in animal_types %} 
-            <option value={{animal_type.id}}>{{animal_type.name}}</option>
-            {% endfor %}
-        </select>
-    </div>
-
-    <div>
-        <label for="breed">Breed</label>
-        <input type="text" id="breed" name="breed" placeholder="Name of breed" required autofocus>
-    </div>
-
-
-    <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Name of animal" required autofocus>
-    </div>
-
-    <div>
-        <label for="seen">Have you seen this breed?</label>
-        <select name="seen" id="seen">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-        <!-- <label for="seen">have you seen this breed</label>
-        <input type="checkbox" name="seen" value="false"> -->
-    </select>
-    </div>
-
-    <button type="submit">Add </button>
+<div class="add-edit-btn">
+    <button type="submit">Add </button></div>
 
 </div>
 </div>
 </form>
+  
+
+<div class="spacebetweenboxes-species"></div>
+
+
+<div class="wrapper">
+    <div class="box">
+        <img src="https://previews.123rf.com/images/saphatthachat/saphatthachat1903/saphatthachat190300144/120476223-vector-pixel-art-narwhal-isolated-cartoon.jpg"height="100px" width= "100px">
+    </div>
+
+    <div class="box">
+        <img src="https://previews.123rf.com/images/saphatthachat/saphatthachat1902/saphatthachat190200009/118401324-vektor-pixel-kunst-schildkr%C3%B6te-isoliert-cartoon.jpg"height="100px" width= "100px">
+    </div>
+
+    <div class="box">
+        <img src="https://previews.123rf.com/images/sararoom/sararoom1603/sararoom160300012/53525859-ilustraci%C3%B3n-de-dibujos-animados-pato-dise%C3%B1o-del-pixel.jpg"height="100px" width= "100px">
+    </div>
+
+    <div class="box">
+        <img src="https://previews.123rf.com/images/saphatthachat/saphatthachat1903/saphatthachat190300027/124750735-vector-pixel-art-elephant-bird-isolated-cartoon.jpg"height="100px" width= "100px">
+    </div>
+
+    <div class="box">
+        <img src="https://previews.123rf.com/images/saphatthachat/saphatthachat1902/saphatthachat190200016/125583838-vecteur-pixel-art-girafe-isol%C3%A9-dessin-anim%C3%A9.jpg"height="100px" width= "100px">
+    </div>
 
 
 
+
+
+    </div>
 {% endblock %}

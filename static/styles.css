@@ -86,7 +86,7 @@ padding: 3%;
 
 
 .spaceBetweenBoxes {
-padding: 1%;
+padding: 0.7%;
 
 }
 
@@ -97,9 +97,22 @@ padding: 10%;
 
 }
 
+.space-between-labels {
+    
+   
+    padding: 5%;
+}
+
 .homepage-text {
     font-size: 30px;
 }
+
+.add-edit-btn {
+margin-left: 37%;
+
+}
+
+
 
 .text-box a {
 
@@ -134,6 +147,20 @@ text-decoration: underline;
 
     font-size: 20px;
     padding: 5%;
+
+}
+
+
+
+.padding-container {
+padding-bottom: 50px;
+
+
+}
+
+
+.spacebetweenboxes-species {
+padding-bottom: 0px;
 
 }
 

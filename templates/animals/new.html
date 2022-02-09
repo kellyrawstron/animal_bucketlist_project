@@ -4,12 +4,16 @@
 <div class="page-title">
     <h1 class="header">{{ header }}</h1>
     </div>
-
+    <div class="padding-container">
+    <div class="edit-box">
+      
 <form action="/animals" method="POST">
     <div class="container">
+        
     <div class="box">
+       
     <div>
-        <label for="animal-type">Animal Type</label>
+        <label for="animal-type">SPECIES</label>
         <select id="animal-type" name="animal_type_id">
 
             {% for animal_type in animal_types %} 
@@ -17,20 +21,26 @@
             {% endfor %}
         </select>
     </div>
-
+    <div class="spaceBetweenBoxes"></div>
+    <div class="spaceBetweenBoxes"></div>
+    <div class="space-between-labels"></div>
     <div>
-        <label for="breed">Breed</label>
+        <label for="breed">BREED</label>
         <input type="text" id="breed" name="breed" placeholder="Name of breed" required autofocus>
     </div>
 
-
+    <div class="spaceBetweenBoxes"></div>
+    <div class="spaceBetweenBoxes"></div>
+    <div class="space-between-labels"></div>
     <div>
-        <label for="name">Name</label>
+        <label for="name">NAME</label>
         <input type="text" id="name" name="name" placeholder="Name of animal" required autofocus>
     </div>
-
+    <div class="spaceBetweenBoxes"></div>
+    <div class="spaceBetweenBoxes"></div>
+    <div class="space-between-labels"></div>
     <div>
-        <label for="seen">Have you seen this breed?</label>
+        <label for="seen">ANIMAL SEEN?</label>
         <select name="seen" id="seen">
         <option value="true">Yes</option>
         <option value="false">No</option>
@@ -38,13 +48,19 @@
         <input type="checkbox" name="seen" value="false"> -->
     </select>
     </div>
+    <div class="spaceBetweenBoxes"></div>
+   
+    <div class="space-between-labels"></div>
 
-    <button type="submit">Add </button>
+    <div class="add-edit-btn">
+    <button type="submit">Add </button> </div>
 
 </div>
 </div>
 </form>
+    </div>
 
+</div>
 
 
 {% endblock %}
