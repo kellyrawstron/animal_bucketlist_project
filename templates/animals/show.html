@@ -1,18 +1,55 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <p>{{animal.name}}</p>
-    <br>
-    <p>{{animal.breed}}</p>
-    
-    <p>Breed seen? {{animal.seen}}</p>
-    
 
-      <a href="/animals/{{animal.id}}/edit"> <button type="submit" name="send" value="edit"> edit </button></a>
+
+   
+<!-- 
+
+ 
+      <div class="text-box">
+
+          <div class="animal-type-text">
+  {{animal.animal_type.name}}
+      </div>
+    <br>
+    <p>{{animal.name}}</p>
+
+    <div class="animal-breed-text">
+    <p>{{animal.breed}}</p>
+    </div>
+    <br>
+
+      
+      </div>   -->
+
+    
   
-<br>
-animalllllll
+    {% if animal.seen == True %} 
+    <div class="true-false-text">
+        YOU SEEN IT WOO HOO!!
+    </div>
+        <div class="wrapper">
+        <div class="box">
+    <p><img src= "https://previews.123rf.com/images/saphatthachat/saphatthachat1810/saphatthachat181000143/110829170-vector-pixel-art-funny-donkey-isolated-cartoon.jpg" height="450px" width="450px"/></p>
+        </div>
+        </div>
+    {% else %}
+    <div class="true-false-text">
+      OHH NO NOT SEEN YET!!
+  </div>
+  <div class="wrapper">
+    <div class="box">
+<p><img src= "https://previews.123rf.com/images/saphatthachat/saphatthachat1807/saphatthachat180700133/105918263-vector-pixel-art-dog-regret-isolated-cartoon.jpg" height="450px" width="450px"/></p>
+    </div>
+    </div>
+    
+    {% endif %} 
+
+   
+  
+
+
 
 
 

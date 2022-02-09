@@ -11,7 +11,7 @@ animal_types_blueprint = Blueprint("animal_types", __name__)
 
 @animal_types_blueprint.route("/animal_types/new")
 def new_type():  
-    return render_template('animal_types/new.html', header = "SPECIES")
+    return render_template('animal_types/new.html', header = "ADD SPECIES")
 
 @animal_types_blueprint.route("/animal_types", methods=['POST'])
 def create_type():

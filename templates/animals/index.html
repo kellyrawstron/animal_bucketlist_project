@@ -18,18 +18,16 @@
         {{animal.name}}
         <br>
         <div class="animal-breed-text">
-        <a href="/animals/{{animal.id}}">{{animal.breed}}</a> 
+        <label for="animal-breed"><a href="/animals/{{animal.id}}">{{animal.breed}}</a>
+            <div class="spaceBetweenBoxes"></div>
+            <a href="/animals/{{animal.id}}"> <img src="https://image.emojipng.com/680/13514680.jpg" height="30px" width="30px"></a>
+            </label>
             </div>
 
         <div class="spaceBetweenBoxes"></div>
 
             
-    <!-- {% if animal.seen == True %} 
-        <p> SEEN IT YAYYYY</p>
-    {% else %}
-
-    <p> NOT SEEN IT</p>
-    {% endif %} -->
+  
 
         <div class="edit-delete-btn">
         <form action="/animals/{{animal.id}}/delete" method="POST">

@@ -165,7 +165,11 @@ padding-bottom: 0px;
 }
 
 
-
+.true-false-text {
+    font-size: 90px;
+    text-align: center;
+    text-shadow: 4px 4px 20px #4a39e4;
+}
 
 
 

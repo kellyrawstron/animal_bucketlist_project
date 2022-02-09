@@ -16,7 +16,7 @@ def animals():
 @animals_blueprint.route("/animals/new")
 def new_animal():
     animal_types = animal_type_repository.select_all()
-    return render_template('animals/new.html', animal_types = animal_types, header = "Add Animals")
+    return render_template('animals/new.html', animal_types = animal_types, header = "Add Animal")
 
 @animals_blueprint.route("/animals", methods=['POST'])
 def create_animal():
